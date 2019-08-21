@@ -1,0 +1,40 @@
+app:
+  build: .
+  volumes:
+    - ./:/var/www/html
+  working_dir: /var/www/html/app/public
+  command: php-fpm
+  links:
+    - db
+  environment:
+    APP_ENV: local
+    APP_DEBUG: "true"
+    APP_KEY: base64:hKLsnzBB2cGV7bdhIXTPjMBK9Lspbw52oxWvOXROdmk=
+    APP_LOCALE: en
+    APP_FALLBACK_LOCALE: en
+    DB_CONNECTION: mysql
+    DB_HOST: db
+    DB_DATABASE: test
+    DB_USERNAME: test
+    DB_PASSWORD: test
+
+db:
+  image: mysql:5.7
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: test
+    MYSQL_DATABASE: test
+    MYSQL_USER: test
+    MYSQL_PASSWORD: test
+    MYSQL_HOST: 0.0.0.0
+
+web:
+  image: nginx:latest
+  ports:
+    - "8080:80"
+  volumes:
+    - ./src:/var/www/html
+    - ./default.conf:/etc/nginx/conf.d/default.conf
+  links:
+    - app
