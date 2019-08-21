@@ -9,7 +9,7 @@ app:
   environment:
     APP_ENV: local
     APP_DEBUG: "true"
-    APP_KEY: SomeRandomKey
+    APP_KEY: base64:hKLsnzBB2cGV7bdhIXTPjMBK9Lspbw52oxWvOXROdmk=
     APP_LOCALE: en
     APP_FALLBACK_LOCALE: en
     DB_CONNECTION: mysql
