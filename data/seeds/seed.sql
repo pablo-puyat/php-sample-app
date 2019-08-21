@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.25)
 # Database: test
-# Generation Time: 2019-08-21 22:41:05 +0000
+# Generation Time: 2019-08-21 23:15:06 +0000
 # ************************************************************
 
 
@@ -27,26 +27,28 @@ DROP TABLE IF EXISTS `categories`;
 
 CREATE TABLE `categories` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) DEFAULT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
 
-INSERT INTO `categories` (`id`, `name`)
+INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`)
 VALUES
-	(1,'Ethiopia'),
-	(2,'Meat'),
-	(3,'Beef'),
-	(4,'China'),
-	(5,'Fish'),
-	(6,'Tofu'),
-	(7,'Sichuan pepper'),
-	(8,'Peru'),
-	(9,'Potato'),
-	(10,'Yellow Chili pepper'),
-	(11,'Chili pepper');
+	(1,'Ethiopia',NULL,NULL),
+	(2,'Meat',NULL,NULL),
+	(3,'Beef',NULL,NULL),
+	(4,'China',NULL,NULL),
+	(5,'Fish',NULL,NULL),
+	(6,'Tofu',NULL,NULL),
+	(7,'Sichuan pepper',NULL,NULL),
+	(8,'Peru',NULL,NULL),
+	(9,'Potato',NULL,NULL),
+	(10,'Yellow Chili pepper',NULL,NULL),
+	(11,'Chili pepper',NULL,NULL);
 
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -97,17 +99,19 @@ CREATE TABLE `products` (
   `name` varchar(11) DEFAULT NULL,
   `sku` varchar(11) DEFAULT NULL,
   `price` float DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
 
-INSERT INTO `products` (`id`, `name`, `sku`, `price`)
+INSERT INTO `products` (`id`, `name`, `sku`, `price`, `updated_at`, `created_at`)
 VALUES
-	(1,'Cau-Cau','DISH775TGHY',15.29),
-	(2,'Huo Guo','DISH234ZFDR',11.99),
-	(3,'Sik Sik Wat','DISH999ABCD',13.49);
+	(1,'Cau-Cau','DISH775TGHY',15.29,NULL,NULL),
+	(2,'Huo Guo','DISH234ZFDR',11.99,NULL,NULL),
+	(3,'Sik Sik Wat','DISH999ABCD',13.49,NULL,NULL);
 
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
