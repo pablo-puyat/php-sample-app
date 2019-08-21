@@ -1,0 +1,10 @@
+{
+    "name": "Product Name",
+    "sku": "SKU",
+    "price": 19.99,
+    "categories": [
+        "Peru",
+        " New Potato",
+        "Red Hot Chili Pepper"
+    ]
+}
