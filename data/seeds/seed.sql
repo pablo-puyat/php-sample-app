@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.25)
 # Database: test
-# Generation Time: 2019-08-21 21:45:07 +0000
+# Generation Time: 2019-08-21 22:41:05 +0000
 # ************************************************************
 
 
@@ -52,22 +52,22 @@ VALUES
 UNLOCK TABLES;
 
 
-# Dump of table categories_products
+# Dump of table category_product
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `categories_products`;
+DROP TABLE IF EXISTS `category_product`;
 
-CREATE TABLE `categories_products` (
+CREATE TABLE `category_product` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `category_id` int(11) DEFAULT NULL,
   `product_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-LOCK TABLES `categories_products` WRITE;
-/*!40000 ALTER TABLE `categories_products` DISABLE KEYS */;
+LOCK TABLES `category_product` WRITE;
+/*!40000 ALTER TABLE `category_product` DISABLE KEYS */;
 
-INSERT INTO `categories_products` (`id`, `category_id`, `product_id`)
+INSERT INTO `category_product` (`id`, `category_id`, `product_id`)
 VALUES
 	(1,8,1),
 	(2,9,1),
@@ -83,7 +83,7 @@ VALUES
 	(12,3,3),
 	(13,11,3);
 
-/*!40000 ALTER TABLE `categories_products` ENABLE KEYS */;
+/*!40000 ALTER TABLE `category_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -96,7 +96,7 @@ CREATE TABLE `products` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(11) DEFAULT NULL,
   `sku` varchar(11) DEFAULT NULL,
-  `price` int(11) DEFAULT NULL,
+  `price` float DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -105,9 +105,9 @@ LOCK TABLES `products` WRITE;
 
 INSERT INTO `products` (`id`, `name`, `sku`, `price`)
 VALUES
-	(1,'Cau-Cau','DISH775TGHY',1529),
-	(2,'Huo Guo','DISH234ZFDR',1199),
-	(3,'Sik Sik Wat','DISH999ABCD',1349);
+	(1,'Cau-Cau','DISH775TGHY',15.29),
+	(2,'Huo Guo','DISH234ZFDR',11.99),
+	(3,'Sik Sik Wat','DISH999ABCD',13.49);
 
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
